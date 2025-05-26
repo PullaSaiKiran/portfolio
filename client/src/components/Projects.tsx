@@ -96,12 +96,12 @@ export default function Projects() {
                     ))}
                   </div>
 
-                  <div className="flex items-center justify-between pt-4 border-t border-slate-100">
-                    <span className="text-sm text-slate-500 font-medium">View Project</span>
+                  <div className="flex items-center justify-between pt-4 border-t border-slate-600">
+                    <span className="text-sm text-gray-400 font-medium">View Project</span>
                     <div className="flex space-x-3">
                       <a
                         href={project.github}
-                        className="text-slate-400 hover:text-indigo-600 transition-colors duration-300"
+                        className="text-gray-400 hover:text-indigo-400 transition-colors duration-300"
                         onClick={(e) => {
                           e.preventDefault();
                           console.log(`Navigate to GitHub repository for ${project.title}`);
@@ -111,7 +111,7 @@ export default function Projects() {
                       </a>
                       <a
                         href={project.demo}
-                        className="text-slate-400 hover:text-indigo-600 transition-colors duration-300"
+                        className="text-gray-400 hover:text-indigo-400 transition-colors duration-300"
                         onClick={(e) => {
                           e.preventDefault();
                           console.log(`Navigate to live demo for ${project.title}`);
