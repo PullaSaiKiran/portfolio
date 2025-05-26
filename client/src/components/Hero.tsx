@@ -1,28 +1,8 @@
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
-import { Mail, Code, Download, Github, Linkedin, MapPin, Phone } from "lucide-react";
-import { useQuery } from "@tanstack/react-query";
-import { apiRequest } from "@/lib/queryClient";
+import { Download, Mail, MapPin, Phone } from "lucide-react";
 
 export default function Hero() {
-  const handleDownloadResume = async () => {
-    try {
-      const response = await apiRequest("GET", "/api/resume");
-      const data = await response.json();
-      
-      // In a real implementation, this would trigger an actual file download
-      console.log("Resume download:", data);
-      
-      // Create a mock download for demonstration
-      const link = document.createElement('a');
-      link.href = '#';
-      link.download = 'Pulla_Sai_Kiran_Resume.pdf';
-      link.click();
-    } catch (error) {
-      console.error("Failed to download resume:", error);
-    }
-  };
-
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId);
     if (element) {
@@ -30,137 +10,158 @@ export default function Hero() {
     }
   };
 
-  return (
-    <section id="home" className="min-h-screen flex items-center justify-center relative overflow-hidden">
-      {/* Advanced Background */}
-      <div className="absolute inset-0 bg-gradient-to-br from-blue-50 via-slate-50 to-cyan-50">
-        <div className="absolute inset-0 hero-glow"></div>
-        <div className="absolute inset-0 opacity-5">
-          <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-indigo-300 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-pulse"></div>
-          <div className="absolute top-1/3 right-1/4 w-96 h-96 bg-violet-300 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-pulse delay-1000"></div>
-          <div className="absolute bottom-1/4 left-1/3 w-96 h-96 bg-pink-300 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-pulse delay-2000"></div>
-        </div>
-      </div>
+  const handleDownloadResume = () => {
+    const link = document.createElement("a");
+    link.href = "/attached_assets/resume new (4).pdf";
+    link.download = "Pulla_Sai_Kiran_Resume.pdf";
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  };
 
-      <div className="relative z-10 max-w-7xl mx-auto px-6 text-center">
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1, ease: "easeOut" }}
-          className="mb-12"
-        >
-          {/* Professional Profile Picture */}
-          <div className="relative w-40 h-40 mx-auto mb-8">
-            <div className="w-full h-full rounded-full bg-gradient-to-r from-indigo-600 via-purple-600 to-violet-600 p-1 shadow-2xl">
-              <div className="w-full h-full rounded-full bg-white flex items-center justify-center shadow-inner">
-                <div className="w-32 h-32 rounded-full bg-gradient-to-br from-indigo-100 to-violet-100 flex items-center justify-center">
-                  <span className="text-3xl font-bold gradient-text">SK</span>
+  return (
+    <section id="home" className="min-h-screen flex items-center justify-center bg-gradient-to-br from-blue-50 to-white">
+      <div className="container-custom section-padding">
+        <div className="grid lg:grid-cols-2 gap-12 items-center">
+          {/* Left Content */}
+          <motion.div
+            initial={{ opacity: 0, x: -50 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8 }}
+            className="text-center lg:text-left"
+          >
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+            >
+              <h3 className="text-lg font-medium text-blue-600 mb-2">Hello, I'm</h3>
+              <h1 className="text-4xl lg:text-6xl font-bold text-gray-900 mb-4">
+                Pulla Sai Kiran
+              </h1>
+              <h2 className="text-2xl lg:text-3xl font-semibold text-gray-700 mb-6">
+                AI/ML Developer & Software Engineer
+              </h2>
+            </motion.div>
+
+            <motion.p
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.4 }}
+              className="text-lg text-gray-600 mb-8 max-w-xl"
+            >
+              Passionate about creating intelligent solutions with cutting-edge machine learning 
+              technologies and building scalable software applications.
+            </motion.p>
+
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.6 }}
+              className="flex flex-col sm:flex-row gap-4 mb-8"
+            >
+              <Button
+                onClick={() => scrollToSection("contact")}
+                className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 rounded-full"
+              >
+                <Mail className="w-4 h-4 mr-2" />
+                Hire Me
+              </Button>
+              <Button
+                variant="outline"
+                onClick={handleDownloadResume}
+                className="border-2 border-blue-600 text-blue-600 hover:bg-blue-600 hover:text-white px-8 py-3 rounded-full"
+              >
+                <Download className="w-4 h-4 mr-2" />
+                Download CV
+              </Button>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.8 }}
+              className="flex flex-col sm:flex-row gap-4 text-gray-600"
+            >
+              <div className="flex items-center">
+                <MapPin className="w-4 h-4 text-blue-600 mr-2" />
+                <span>Hyderabad, India</span>
+              </div>
+              <div className="flex items-center">
+                <Phone className="w-4 h-4 text-blue-600 mr-2" />
+                <span>Available for opportunities</span>
+              </div>
+            </motion.div>
+          </motion.div>
+
+          {/* Right Content - Profile Image */}
+          <motion.div
+            initial={{ opacity: 0, x: 50 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+            className="flex justify-center lg:justify-end"
+          >
+            <div className="relative">
+              {/* Main Profile Circle */}
+              <div className="w-80 h-80 lg:w-96 lg:h-96 rounded-full bg-gradient-to-br from-blue-400 via-blue-500 to-blue-600 p-2 shadow-2xl">
+                <div className="w-full h-full rounded-full bg-white flex items-center justify-center">
+                  <div className="w-72 h-72 lg:w-88 lg:h-88 rounded-full bg-gradient-to-br from-blue-50 to-blue-100 flex items-center justify-center">
+                    <span className="text-6xl lg:text-8xl font-bold gradient-text">SK</span>
+                  </div>
                 </div>
               </div>
+
+              {/* Floating Elements */}
+              <motion.div
+                animate={{ y: [-10, 10, -10] }}
+                transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
+                className="absolute -top-4 -left-4 w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center shadow-lg"
+              >
+                <span className="text-2xl">💻</span>
+              </motion.div>
+
+              <motion.div
+                animate={{ y: [10, -10, 10] }}
+                transition={{ duration: 4, repeat: Infinity, ease: "easeInOut", delay: 2 }}
+                className="absolute -bottom-4 -right-4 w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center shadow-lg"
+              >
+                <span className="text-2xl">🤖</span>
+              </motion.div>
+
+              <motion.div
+                animate={{ y: [-5, 15, -5] }}
+                transition={{ duration: 3, repeat: Infinity, ease: "easeInOut", delay: 1 }}
+                className="absolute top-1/4 -right-8 w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center shadow-lg"
+              >
+                <span className="text-xl">⚡</span>
+              </motion.div>
             </div>
-            <div className="absolute -top-2 -right-2 w-8 h-8 bg-green-500 rounded-full border-4 border-white shadow-lg">
-              <div className="w-full h-full bg-green-400 rounded-full animate-ping"></div>
-            </div>
-          </div>
+          </motion.div>
+        </div>
 
-          <div className="space-y-6">
-            <h1 className="text-5xl md:text-7xl font-bold text-slate-700 mb-4">
-              <span className="gradient-text">Pulla Sai Kiran</span>
-            </h1>
-            <p className="text-xl md:text-2xl text-slate-600 mb-2">AI/ML Developer & Software Engineer</p>
-            <p className="text-lg text-slate-500 mb-8 flex items-center justify-center">
-              <MapPin className="w-5 h-5 text-primary mr-2" />
-              Hyderabad, India
-            </p>
-          </div>
-        </motion.div>
-
-        {/* Professional Statistics */}
+        {/* Statistics */}
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
+          initial={{ opacity: 0, y: 50 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.3 }}
-          className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12 max-w-4xl mx-auto"
+          transition={{ duration: 0.8, delay: 1 }}
+          className="grid grid-cols-2 md:grid-cols-4 gap-8 mt-20 text-center"
         >
-          <div className="bg-white p-6 rounded-2xl text-center shadow-lg">
-            <div className="text-3xl font-bold gradient-text mb-2">8.02</div>
-            <div className="text-sm text-slate-600 font-medium">CGPA</div>
+          <div className="bg-white p-6 rounded-2xl shadow-lg card-hover">
+            <h3 className="text-3xl font-bold gradient-text mb-2">8.02</h3>
+            <p className="text-gray-600 font-medium">CGPA</p>
           </div>
-          <div className="bg-white p-6 rounded-2xl text-center shadow-lg">
-            <div className="text-3xl font-bold gradient-text mb-2">3+</div>
-            <div className="text-sm text-slate-600 font-medium">Major Projects</div>
+          <div className="bg-white p-6 rounded-2xl shadow-lg card-hover">
+            <h3 className="text-3xl font-bold gradient-text mb-2">3+</h3>
+            <p className="text-gray-600 font-medium">Projects</p>
           </div>
-          <div className="bg-white p-6 rounded-2xl text-center shadow-lg">
-            <div className="text-3xl font-bold gradient-text mb-2">6+</div>
-            <div className="text-sm text-slate-600 font-medium">Certifications</div>
+          <div className="bg-white p-6 rounded-2xl shadow-lg card-hover">
+            <h3 className="text-3xl font-bold gradient-text mb-2">6+</h3>
+            <p className="text-gray-600 font-medium">Certifications</p>
           </div>
-        </motion.div>
-
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.4 }}
-          className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12"
-        >
-          <Button
-            onClick={() => scrollToSection("contact")}
-            className="bg-primary hover:bg-blue-700 text-white px-8 py-3 rounded-full font-semibold"
-          >
-            <Mail className="w-4 h-4 mr-2" />
-            Get In Touch
-          </Button>
-          <Button
-            variant="outline"
-            onClick={() => scrollToSection("projects")}
-            className="border-2 border-primary text-primary hover:bg-primary hover:text-white px-8 py-3 rounded-full font-semibold"
-          >
-            <Code className="w-4 h-4 mr-2" />
-            View Projects
-          </Button>
-          <Button
-            variant="secondary"
-            onClick={handleDownloadResume}
-            className="bg-slate-200 hover:bg-slate-300 text-slate-700 px-8 py-3 rounded-full font-semibold"
-          >
-            <Download className="w-4 h-4 mr-2" />
-            Download Resume
-          </Button>
-        </motion.div>
-
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.5 }}
-          className="flex justify-center space-x-6"
-        >
-          <a
-            href="https://github.com/PullaSaiKiran"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="w-14 h-14 bg-slate-700 hover:bg-indigo-600 rounded-full flex items-center justify-center text-gray-300 hover:text-white shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-110"
-          >
-            <Github className="w-6 h-6" />
-          </a>
-          <a
-            href="https://www.linkedin.com/in/sai-kiran-72b423218"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="w-14 h-14 bg-slate-700 hover:bg-blue-600 rounded-full flex items-center justify-center text-gray-300 hover:text-white shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-110"
-          >
-            <Linkedin className="w-6 h-6" />
-          </a>
-          <a
-            href="mailto:saikiranp816@gmail.com"
-            className="w-14 h-14 bg-slate-700 hover:bg-green-600 rounded-full flex items-center justify-center text-gray-300 hover:text-white shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-110"
-          >
-            <Mail className="w-6 h-6" />
-          </a>
-          <a
-            href="tel:+919515703265"
-            className="w-14 h-14 bg-slate-700 hover:bg-purple-600 rounded-full flex items-center justify-center text-gray-300 hover:text-white shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-110"
-          >
-            <Phone className="w-6 h-6" />
-          </a>
+          <div className="bg-white p-6 rounded-2xl shadow-lg card-hover">
+            <h3 className="text-3xl font-bold gradient-text mb-2">2+</h3>
+            <p className="text-gray-600 font-medium">Years Learning</p>
+          </div>
         </motion.div>
       </div>
     </section>

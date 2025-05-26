@@ -27,14 +27,14 @@ export default function Navigation() {
     <nav
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         isScrolled
-          ? "floating-nav bg-white/90 shadow-lg"
-          : "floating-nav"
+          ? "navbar-blur shadow-lg"
+          : "bg-transparent"
       }`}
     >
       <div className="max-w-6xl mx-auto px-6 py-4">
         <div className="flex justify-between items-center">
-          <div className="font-bold text-xl text-slate-700">
-            <span className="gradient-text">SK</span>
+          <div className="font-bold text-2xl">
+            <span className="gradient-text">Sai Kiran</span>
           </div>
 
           {/* Desktop Navigation */}
@@ -49,7 +49,7 @@ export default function Navigation() {
               <button
                 key={item.id}
                 onClick={() => scrollToSection(item.id)}
-                className="text-slate-600 hover:text-primary transition-colors"
+                className="text-gray-700 hover:text-blue-600 transition-colors font-medium"
               >
                 {item.label}
               </button>
