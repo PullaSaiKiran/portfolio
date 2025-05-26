@@ -32,12 +32,12 @@ export default function Projects() {
   ];
 
   return (
-    <section id="projects" className="py-20 bg-gradient-to-br from-slate-900 via-gray-900 to-indigo-900">
-      <div className="max-w-6xl mx-auto px-6">
+    <section id="projects" className="section-padding bg-gray-50">
+      <div className="container-custom">
         <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold text-white mb-4">Featured Projects</h2>
-          <div className="w-20 h-1 bg-gradient-to-r from-primary to-accent mx-auto mb-4"></div>
-          <p className="text-lg text-gray-300">Showcasing my experience in AI/ML and web development</p>
+          <h2 className="text-4xl font-bold text-gray-900 mb-4">My Projects</h2>
+          <div className="section-divider"></div>
+          <p className="text-lg text-gray-600 max-w-2xl mx-auto">Here are some of my recent projects showcasing my skills in AI/ML and web development</p>
         </div>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -49,77 +49,53 @@ export default function Projects() {
               transition={{ duration: 0.6, delay: index * 0.1 }}
               viewport={{ once: true }}
             >
-              <Card className="professional-card overflow-hidden group">
+              <Card className="bg-white rounded-2xl shadow-lg overflow-hidden card-hover group">
                 <div className="relative overflow-hidden">
                   <img
                     src={project.image}
                     alt={project.title}
-                    className="w-full h-52 object-cover transition-transform duration-500 group-hover:scale-110"
+                    className="w-full h-48 object-cover transition-transform duration-500 group-hover:scale-110"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                  <div className="absolute top-4 right-4 flex space-x-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                    <a
-                      href={project.github}
-                      className="w-10 h-10 bg-white/90 hover:bg-white rounded-full flex items-center justify-center text-slate-700 hover:text-indigo-600 transition-all duration-300 transform hover:scale-110"
-                      onClick={(e) => {
-                        e.preventDefault();
-                        console.log(`Navigate to GitHub repository for ${project.title}`);
-                      }}
-                    >
-                      <Github className="w-5 h-5" />
-                    </a>
-                    <a
-                      href={project.demo}
-                      className="w-10 h-10 bg-white/90 hover:bg-white rounded-full flex items-center justify-center text-slate-700 hover:text-indigo-600 transition-all duration-300 transform hover:scale-110"
-                      onClick={(e) => {
-                        e.preventDefault();
-                        console.log(`Navigate to live demo for ${project.title}`);
-                      }}
-                    >
-                      <ExternalLink className="w-5 h-5" />
-                    </a>
-                  </div>
-                </div>
-                
-                <CardContent className="p-8">
-                  <h3 className="text-2xl font-bold text-white mb-4 group-hover:text-indigo-400 transition-colors duration-300">{project.title}</h3>
-                  <p className="text-gray-300 mb-6 leading-relaxed">{project.description}</p>
-
-                  <div className="flex flex-wrap gap-2 mb-6">
-                    {project.tech.map((tech, techIndex) => (
-                      <Badge
-                        key={techIndex}
-                        className="tech-badge px-3 py-1 text-sm font-semibold"
-                      >
-                        {tech}
-                      </Badge>
-                    ))}
-                  </div>
-
-                  <div className="flex items-center justify-between pt-4 border-t border-slate-600">
-                    <span className="text-sm text-gray-400 font-medium">View Project</span>
-                    <div className="flex space-x-3">
+                  <div className="project-overlay absolute inset-0 flex items-center justify-center">
+                    <div className="flex space-x-4">
                       <a
                         href={project.github}
-                        className="text-gray-400 hover:text-indigo-400 transition-colors duration-300"
+                        className="w-12 h-12 bg-white rounded-full flex items-center justify-center text-blue-600 hover:bg-blue-50 transition-all duration-300 transform hover:scale-110"
                         onClick={(e) => {
                           e.preventDefault();
                           console.log(`Navigate to GitHub repository for ${project.title}`);
                         }}
                       >
-                        <Github className="w-5 h-5" />
+                        <Github className="w-6 h-6" />
                       </a>
                       <a
                         href={project.demo}
-                        className="text-gray-400 hover:text-indigo-400 transition-colors duration-300"
+                        className="w-12 h-12 bg-white rounded-full flex items-center justify-center text-blue-600 hover:bg-blue-50 transition-all duration-300 transform hover:scale-110"
                         onClick={(e) => {
                           e.preventDefault();
                           console.log(`Navigate to live demo for ${project.title}`);
                         }}
                       >
-                        <ExternalLink className="w-5 h-5" />
+                        <ExternalLink className="w-6 h-6" />
                       </a>
                     </div>
+                  </div>
+                </div>
+                
+                <CardContent className="p-6">
+                  <h3 className="text-xl font-bold text-gray-900 mb-3">{project.title}</h3>
+                  <p className="text-gray-600 mb-4 leading-relaxed text-sm">{project.description}</p>
+
+                  <div className="flex flex-wrap gap-2">
+                    {project.tech.map((tech, techIndex) => (
+                      <Badge
+                        key={techIndex}
+                        variant="secondary"
+                        className="bg-blue-50 text-blue-700 hover:bg-blue-100 px-3 py-1 text-xs font-medium"
+                      >
+                        {tech}
+                      </Badge>
+                    ))}
                   </div>
                 </CardContent>
               </Card>
