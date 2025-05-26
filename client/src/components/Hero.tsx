@@ -33,7 +33,7 @@ export default function Hero() {
   return (
     <section id="home" className="min-h-screen flex items-center justify-center relative overflow-hidden">
       {/* Advanced Background */}
-      <div className="absolute inset-0 bg-gradient-to-br from-slate-800 via-gray-800 to-indigo-800">
+      <div className="absolute inset-0 bg-gradient-to-br from-blue-50 via-slate-50 to-cyan-50">
         <div className="absolute inset-0 hero-glow"></div>
         <div className="absolute inset-0 opacity-5">
           <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-indigo-300 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-pulse"></div>
@@ -52,37 +52,26 @@ export default function Hero() {
           {/* Professional Profile Picture */}
           <div className="relative w-40 h-40 mx-auto mb-8">
             <div className="w-full h-full rounded-full bg-gradient-to-r from-indigo-600 via-purple-600 to-violet-600 p-1 shadow-2xl">
-              <div className="w-full h-full rounded-full bg-slate-800 flex items-center justify-center shadow-inner">
+              <div className="w-full h-full rounded-full bg-white flex items-center justify-center shadow-inner">
                 <div className="w-32 h-32 rounded-full bg-gradient-to-br from-indigo-100 to-violet-100 flex items-center justify-center">
                   <span className="text-3xl font-bold gradient-text">SK</span>
                 </div>
               </div>
             </div>
-            <div className="absolute -top-2 -right-2 w-8 h-8 bg-green-500 rounded-full border-4 border-slate-800 shadow-lg">
+            <div className="absolute -top-2 -right-2 w-8 h-8 bg-green-500 rounded-full border-4 border-white shadow-lg">
               <div className="w-full h-full bg-green-400 rounded-full animate-ping"></div>
             </div>
           </div>
 
           <div className="space-y-6">
-            <h1 className="text-6xl md:text-8xl font-black text-white mb-6 text-shadow">
+            <h1 className="text-5xl md:text-7xl font-bold text-slate-700 mb-4">
               <span className="gradient-text">Pulla Sai Kiran</span>
             </h1>
-            
-            <div className="space-y-3">
-              <p className="text-2xl md:text-3xl font-semibold text-gray-200">
-                AI/ML Engineer & Software Developer
-              </p>
-              <p className="text-lg md:text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
-                Passionate about creating intelligent solutions with cutting-edge machine learning technologies
-              </p>
-            </div>
-
-            <div className="flex items-center justify-center space-x-2 text-indigo-400 text-lg font-medium">
-              <MapPin className="w-5 h-5" />
-              <span className="text-white">Hyderabad, India</span>
-              <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse ml-2"></div>
-              <span className="text-sm text-gray-300">Available for opportunities</span>
-            </div>
+            <p className="text-xl md:text-2xl text-slate-600 mb-2">AI/ML Developer & Software Engineer</p>
+            <p className="text-lg text-slate-500 mb-8 flex items-center justify-center">
+              <MapPin className="w-5 h-5 text-primary mr-2" />
+              Hyderabad, India
+            </p>
           </div>
         </motion.div>
 
@@ -93,17 +82,17 @@ export default function Hero() {
           transition={{ duration: 0.8, delay: 0.3 }}
           className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12 max-w-4xl mx-auto"
         >
-          <div className="stats-card p-6 rounded-2xl text-center">
+          <div className="bg-white p-6 rounded-2xl text-center shadow-lg">
             <div className="text-3xl font-bold gradient-text mb-2">8.02</div>
-            <div className="text-sm text-gray-300 font-medium">CGPA</div>
+            <div className="text-sm text-slate-600 font-medium">CGPA</div>
           </div>
-          <div className="stats-card p-6 rounded-2xl text-center">
+          <div className="bg-white p-6 rounded-2xl text-center shadow-lg">
             <div className="text-3xl font-bold gradient-text mb-2">3+</div>
-            <div className="text-sm text-gray-300 font-medium">Major Projects</div>
+            <div className="text-sm text-slate-600 font-medium">Major Projects</div>
           </div>
-          <div className="stats-card p-6 rounded-2xl text-center">
+          <div className="bg-white p-6 rounded-2xl text-center shadow-lg">
             <div className="text-3xl font-bold gradient-text mb-2">6+</div>
-            <div className="text-sm text-gray-300 font-medium">Certifications</div>
+            <div className="text-sm text-slate-600 font-medium">Certifications</div>
           </div>
         </motion.div>
 
@@ -115,26 +104,26 @@ export default function Hero() {
         >
           <Button
             onClick={() => scrollToSection("contact")}
-            className="bg-gradient-to-r from-indigo-600 to-violet-600 hover:from-indigo-700 hover:to-violet-700 text-white px-10 py-4 rounded-full font-semibold text-lg shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105"
+            className="bg-primary hover:bg-blue-700 text-white px-8 py-3 rounded-full font-semibold"
           >
-            <Mail className="w-5 h-5 mr-3" />
-            Let's Connect
+            <Mail className="w-4 h-4 mr-2" />
+            Get In Touch
           </Button>
           <Button
             variant="outline"
             onClick={() => scrollToSection("projects")}
-            className="border-2 border-indigo-600 text-indigo-600 hover:bg-indigo-600 hover:text-white px-10 py-4 rounded-full font-semibold text-lg transition-all duration-300 transform hover:scale-105"
+            className="border-2 border-primary text-primary hover:bg-primary hover:text-white px-8 py-3 rounded-full font-semibold"
           >
-            <Code className="w-5 h-5 mr-3" />
+            <Code className="w-4 h-4 mr-2" />
             View Projects
           </Button>
           <Button
             variant="secondary"
             onClick={handleDownloadResume}
-            className="bg-slate-100 hover:bg-slate-200 text-slate-700 px-10 py-4 rounded-full font-semibold text-lg transition-all duration-300 transform hover:scale-105"
+            className="bg-slate-200 hover:bg-slate-300 text-slate-700 px-8 py-3 rounded-full font-semibold"
           >
-            <Download className="w-5 h-5 mr-3" />
-            Resume
+            <Download className="w-4 h-4 mr-2" />
+            Download Resume
           </Button>
         </motion.div>
 
