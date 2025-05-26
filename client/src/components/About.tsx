@@ -71,10 +71,10 @@ export default function About() {
                     <GraduationCap className="text-white w-6 h-6" />
                   </div>
                   <div>
-                    <h4 className="text-xl font-bold text-slate-900 mb-2">Academic Excellence</h4>
-                    <p className="text-slate-700 font-semibold">B.Tech in AI & Machine Learning</p>
-                    <p className="text-slate-600">Anurag University, Hyderabad (2021-Present)</p>
-                    <div className="inline-flex items-center bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm font-semibold mt-2">
+                    <h4 className="text-xl font-bold text-white mb-2">Academic Excellence</h4>
+                    <p className="text-gray-200 font-semibold">B.Tech in AI & Machine Learning</p>
+                    <p className="text-gray-300">Anurag University, Hyderabad (2021-Present)</p>
+                    <div className="inline-flex items-center bg-green-600 text-white px-3 py-1 rounded-full text-sm font-semibold mt-2">
                       CGPA: 8.02/10.0
                     </div>
                   </div>
@@ -87,8 +87,8 @@ export default function About() {
                     <Code className="text-white w-6 h-6" />
                   </div>
                   <div>
-                    <h4 className="text-xl font-bold text-slate-900 mb-2">Technical Expertise</h4>
-                    <p className="text-slate-600">Python • Machine Learning • Deep Learning • TensorFlow • Flask • Data Structures & Algorithms</p>
+                    <h4 className="text-xl font-bold text-white mb-2">Technical Expertise</h4>
+                    <p className="text-gray-300">Python • Machine Learning • Deep Learning • TensorFlow • Flask • Data Structures & Algorithms</p>
                   </div>
                 </div>
               </div>
@@ -99,8 +99,8 @@ export default function About() {
                     <Lightbulb className="text-white w-6 h-6" />
                   </div>
                   <div>
-                    <h4 className="text-xl font-bold text-slate-900 mb-2">Core Strengths</h4>
-                    <p className="text-slate-600">Problem-solving • Analytical Thinking • Team Collaboration • Debugging • Innovation</p>
+                    <h4 className="text-xl font-bold text-white mb-2">Core Strengths</h4>
+                    <p className="text-gray-300">Problem-solving • Analytical Thinking • Team Collaboration • Debugging • Innovation</p>
                   </div>
                 </div>
               </div>

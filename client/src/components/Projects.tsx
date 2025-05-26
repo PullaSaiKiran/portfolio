@@ -49,7 +49,7 @@ export default function Projects() {
               transition={{ duration: 0.6, delay: index * 0.1 }}
               viewport={{ once: true }}
             >
-              <Card className="professional-card bg-white overflow-hidden group">
+              <Card className="professional-card overflow-hidden group">
                 <div className="relative overflow-hidden">
                   <img
                     src={project.image}
@@ -82,8 +82,8 @@ export default function Projects() {
                 </div>
                 
                 <CardContent className="p-8">
-                  <h3 className="text-2xl font-bold text-slate-900 mb-4 group-hover:text-indigo-600 transition-colors duration-300">{project.title}</h3>
-                  <p className="text-slate-600 mb-6 leading-relaxed">{project.description}</p>
+                  <h3 className="text-2xl font-bold text-white mb-4 group-hover:text-indigo-400 transition-colors duration-300">{project.title}</h3>
+                  <p className="text-gray-300 mb-6 leading-relaxed">{project.description}</p>
 
                   <div className="flex flex-wrap gap-2 mb-6">
                     {project.tech.map((tech, techIndex) => (

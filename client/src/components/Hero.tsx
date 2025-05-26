@@ -52,13 +52,13 @@ export default function Hero() {
           {/* Professional Profile Picture */}
           <div className="relative w-40 h-40 mx-auto mb-8">
             <div className="w-full h-full rounded-full bg-gradient-to-r from-indigo-600 via-purple-600 to-violet-600 p-1 shadow-2xl">
-              <div className="w-full h-full rounded-full bg-white flex items-center justify-center shadow-inner">
+              <div className="w-full h-full rounded-full bg-slate-800 flex items-center justify-center shadow-inner">
                 <div className="w-32 h-32 rounded-full bg-gradient-to-br from-indigo-100 to-violet-100 flex items-center justify-center">
                   <span className="text-3xl font-bold gradient-text">SK</span>
                 </div>
               </div>
             </div>
-            <div className="absolute -top-2 -right-2 w-8 h-8 bg-green-500 rounded-full border-4 border-white shadow-lg">
+            <div className="absolute -top-2 -right-2 w-8 h-8 bg-green-500 rounded-full border-4 border-slate-800 shadow-lg">
               <div className="w-full h-full bg-green-400 rounded-full animate-ping"></div>
             </div>
           </div>
@@ -148,7 +148,7 @@ export default function Hero() {
             href="https://github.com/PullaSaiKiran"
             target="_blank"
             rel="noopener noreferrer"
-            className="w-14 h-14 bg-white hover:bg-indigo-50 rounded-full flex items-center justify-center text-slate-700 hover:text-indigo-600 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-110"
+            className="w-14 h-14 bg-slate-700 hover:bg-indigo-600 rounded-full flex items-center justify-center text-gray-300 hover:text-white shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-110"
           >
             <Github className="w-6 h-6" />
           </a>
@@ -156,19 +156,19 @@ export default function Hero() {
             href="https://www.linkedin.com/in/sai-kiran-72b423218"
             target="_blank"
             rel="noopener noreferrer"
-            className="w-14 h-14 bg-white hover:bg-blue-50 rounded-full flex items-center justify-center text-slate-700 hover:text-blue-600 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-110"
+            className="w-14 h-14 bg-slate-700 hover:bg-blue-600 rounded-full flex items-center justify-center text-gray-300 hover:text-white shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-110"
           >
             <Linkedin className="w-6 h-6" />
           </a>
           <a
             href="mailto:saikiranp816@gmail.com"
-            className="w-14 h-14 bg-white hover:bg-green-50 rounded-full flex items-center justify-center text-slate-700 hover:text-green-600 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-110"
+            className="w-14 h-14 bg-slate-700 hover:bg-green-600 rounded-full flex items-center justify-center text-gray-300 hover:text-white shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-110"
           >
             <Mail className="w-6 h-6" />
           </a>
           <a
             href="tel:+919515703265"
-            className="w-14 h-14 bg-white hover:bg-purple-50 rounded-full flex items-center justify-center text-slate-700 hover:text-purple-600 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-110"
+            className="w-14 h-14 bg-slate-700 hover:bg-purple-600 rounded-full flex items-center justify-center text-gray-300 hover:text-white shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-110"
           >
             <Phone className="w-6 h-6" />
           </a>
