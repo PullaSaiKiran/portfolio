@@ -33,7 +33,7 @@ export default function Hero() {
   return (
     <section id="home" className="min-h-screen flex items-center justify-center relative overflow-hidden">
       {/* Advanced Background */}
-      <div className="absolute inset-0 bg-gradient-to-br from-indigo-50 via-white to-violet-50">
+      <div className="absolute inset-0 bg-gradient-to-br from-slate-100 via-gray-50 to-blue-100">
         <div className="absolute inset-0 hero-glow"></div>
         <div className="absolute inset-0 opacity-5">
           <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-indigo-300 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-pulse"></div>
