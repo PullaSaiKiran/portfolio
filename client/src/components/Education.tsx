@@ -6,7 +6,7 @@ export default function Education() {
       degree: "B.Tech in Artificial Intelligence & Machine Learning",
       institution: "Anurag University, Hyderabad",
       period: "2021-Present",
-      cgpa: "7.85",
+      cgpa: "8.02",
       color: "bg-primary"
     },
     {

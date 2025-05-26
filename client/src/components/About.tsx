@@ -45,7 +45,7 @@ export default function About() {
                 <div>
                   <h4 className="font-semibold text-slate-700">B.Tech in AI & Machine Learning</h4>
                   <p className="text-slate-600">Anurag University, Hyderabad (2021-Present)</p>
-                  <p className="text-sm text-green-600 font-semibold">CGPA: 7.85</p>
+                  <p className="text-sm text-green-600 font-semibold">CGPA: 8.02</p>
                 </div>
               </div>
 

@@ -32,81 +32,123 @@ export default function Hero() {
 
   return (
     <section id="home" className="min-h-screen flex items-center justify-center relative overflow-hidden">
-      {/* Background */}
-      <div className="absolute inset-0 bg-gradient-to-br from-blue-50 via-slate-50 to-cyan-50">
-        <div className="absolute inset-0 opacity-10 bg-cover bg-center" style={{
-          backgroundImage: "url('https://images.unsplash.com/photo-1518432031352-d6fc5c10da5a?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&h=1080')"
-        }} />
+      {/* Advanced Background */}
+      <div className="absolute inset-0 bg-gradient-to-br from-indigo-50 via-white to-violet-50">
+        <div className="absolute inset-0 hero-glow"></div>
+        <div className="absolute inset-0 opacity-5">
+          <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-indigo-300 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-pulse"></div>
+          <div className="absolute top-1/3 right-1/4 w-96 h-96 bg-violet-300 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-pulse delay-1000"></div>
+          <div className="absolute bottom-1/4 left-1/3 w-96 h-96 bg-pink-300 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-pulse delay-2000"></div>
+        </div>
       </div>
 
-      <div className="relative z-10 max-w-6xl mx-auto px-6 text-center">
+      <div className="relative z-10 max-w-7xl mx-auto px-6 text-center">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          className="mb-8"
+          transition={{ duration: 1, ease: "easeOut" }}
+          className="mb-12"
         >
-          {/* Professional headshot placeholder */}
-          <div className="w-32 h-32 mx-auto mb-6 rounded-full bg-gradient-to-r from-primary to-accent p-1">
-            <div className="w-full h-full rounded-full bg-slate-200 flex items-center justify-center">
-              <div className="w-20 h-20 rounded-full bg-slate-300 flex items-center justify-center">
-                <span className="text-2xl font-bold text-slate-600">SK</span>
+          {/* Professional Profile Picture */}
+          <div className="relative w-40 h-40 mx-auto mb-8">
+            <div className="w-full h-full rounded-full bg-gradient-to-r from-indigo-600 via-purple-600 to-violet-600 p-1 shadow-2xl">
+              <div className="w-full h-full rounded-full bg-white flex items-center justify-center shadow-inner">
+                <div className="w-32 h-32 rounded-full bg-gradient-to-br from-indigo-100 to-violet-100 flex items-center justify-center">
+                  <span className="text-3xl font-bold gradient-text">SK</span>
+                </div>
               </div>
+            </div>
+            <div className="absolute -top-2 -right-2 w-8 h-8 bg-green-500 rounded-full border-4 border-white shadow-lg">
+              <div className="w-full h-full bg-green-400 rounded-full animate-ping"></div>
             </div>
           </div>
 
-          <h1 className="text-5xl md:text-7xl font-bold text-slate-700 mb-4">
-            <span className="gradient-text">Pulla Sai Kiran</span>
-          </h1>
-          <p className="text-xl md:text-2xl text-slate-600 mb-2">AI/ML Developer & Software Engineer</p>
-          <p className="text-lg text-slate-500 mb-8 flex items-center justify-center">
-            <MapPin className="w-5 h-5 text-primary mr-2" />
-            Hyderabad, India
-          </p>
+          <div className="space-y-6">
+            <h1 className="text-6xl md:text-8xl font-black text-slate-900 mb-6 text-shadow">
+              <span className="gradient-text">Pulla Sai Kiran</span>
+            </h1>
+            
+            <div className="space-y-3">
+              <p className="text-2xl md:text-3xl font-semibold text-slate-700">
+                AI/ML Engineer & Software Developer
+              </p>
+              <p className="text-lg md:text-xl text-slate-600 max-w-3xl mx-auto leading-relaxed">
+                Passionate about creating intelligent solutions with cutting-edge machine learning technologies
+              </p>
+            </div>
+
+            <div className="flex items-center justify-center space-x-2 text-indigo-600 text-lg font-medium">
+              <MapPin className="w-5 h-5" />
+              <span>Hyderabad, India</span>
+              <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse ml-2"></div>
+              <span className="text-sm text-slate-500">Available for opportunities</span>
+            </div>
+          </div>
         </motion.div>
 
+        {/* Professional Statistics */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.2 }}
-          className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12"
+          transition={{ duration: 0.8, delay: 0.3 }}
+          className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12 max-w-4xl mx-auto"
         >
-          <Button
-            onClick={() => scrollToSection("contact")}
-            className="bg-primary hover:bg-blue-700 text-white px-8 py-3 rounded-full font-semibold"
-          >
-            <Mail className="w-4 h-4 mr-2" />
-            Get In Touch
-          </Button>
-          <Button
-            variant="outline"
-            onClick={() => scrollToSection("projects")}
-            className="border-2 border-primary text-primary hover:bg-primary hover:text-white px-8 py-3 rounded-full font-semibold"
-          >
-            <Code className="w-4 h-4 mr-2" />
-            View Projects
-          </Button>
-          <Button
-            variant="secondary"
-            onClick={handleDownloadResume}
-            className="bg-slate-200 hover:bg-slate-300 text-slate-700 px-8 py-3 rounded-full font-semibold"
-          >
-            <Download className="w-4 h-4 mr-2" />
-            Download Resume
-          </Button>
+          <div className="stats-card p-6 rounded-2xl text-center">
+            <div className="text-3xl font-bold gradient-text mb-2">8.02</div>
+            <div className="text-sm text-slate-600 font-medium">CGPA</div>
+          </div>
+          <div className="stats-card p-6 rounded-2xl text-center">
+            <div className="text-3xl font-bold gradient-text mb-2">3+</div>
+            <div className="text-sm text-slate-600 font-medium">Major Projects</div>
+          </div>
+          <div className="stats-card p-6 rounded-2xl text-center">
+            <div className="text-3xl font-bold gradient-text mb-2">6+</div>
+            <div className="text-sm text-slate-600 font-medium">Certifications</div>
+          </div>
         </motion.div>
 
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.4 }}
+          className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12"
+        >
+          <Button
+            onClick={() => scrollToSection("contact")}
+            className="bg-gradient-to-r from-indigo-600 to-violet-600 hover:from-indigo-700 hover:to-violet-700 text-white px-10 py-4 rounded-full font-semibold text-lg shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105"
+          >
+            <Mail className="w-5 h-5 mr-3" />
+            Let's Connect
+          </Button>
+          <Button
+            variant="outline"
+            onClick={() => scrollToSection("projects")}
+            className="border-2 border-indigo-600 text-indigo-600 hover:bg-indigo-600 hover:text-white px-10 py-4 rounded-full font-semibold text-lg transition-all duration-300 transform hover:scale-105"
+          >
+            <Code className="w-5 h-5 mr-3" />
+            View Projects
+          </Button>
+          <Button
+            variant="secondary"
+            onClick={handleDownloadResume}
+            className="bg-slate-100 hover:bg-slate-200 text-slate-700 px-10 py-4 rounded-full font-semibold text-lg transition-all duration-300 transform hover:scale-105"
+          >
+            <Download className="w-5 h-5 mr-3" />
+            Resume
+          </Button>
+        </motion.div>
+
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.5 }}
           className="flex justify-center space-x-6"
         >
           <a
             href="https://github.com/PullaSaiKiran"
             target="_blank"
             rel="noopener noreferrer"
-            className="text-slate-600 hover:text-primary text-2xl transition-colors"
+            className="w-14 h-14 bg-white hover:bg-indigo-50 rounded-full flex items-center justify-center text-slate-700 hover:text-indigo-600 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-110"
           >
             <Github className="w-6 h-6" />
           </a>
@@ -114,19 +156,19 @@ export default function Hero() {
             href="https://www.linkedin.com/in/sai-kiran-72b423218"
             target="_blank"
             rel="noopener noreferrer"
-            className="text-slate-600 hover:text-primary text-2xl transition-colors"
+            className="w-14 h-14 bg-white hover:bg-blue-50 rounded-full flex items-center justify-center text-slate-700 hover:text-blue-600 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-110"
           >
             <Linkedin className="w-6 h-6" />
           </a>
           <a
             href="mailto:saikiranp816@gmail.com"
-            className="text-slate-600 hover:text-primary text-2xl transition-colors"
+            className="w-14 h-14 bg-white hover:bg-green-50 rounded-full flex items-center justify-center text-slate-700 hover:text-green-600 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-110"
           >
             <Mail className="w-6 h-6" />
           </a>
           <a
             href="tel:+919515703265"
-            className="text-slate-600 hover:text-primary text-2xl transition-colors"
+            className="w-14 h-14 bg-white hover:bg-purple-50 rounded-full flex items-center justify-center text-slate-700 hover:text-purple-600 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-110"
           >
             <Phone className="w-6 h-6" />
           </a>
