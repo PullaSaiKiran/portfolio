@@ -32,12 +32,12 @@ export default function Projects() {
   ];
 
   return (
-    <section id="projects" className="py-20 bg-gradient-to-br from-white via-gray-50 to-slate-100">
+    <section id="projects" className="py-20 bg-gradient-to-br from-slate-900 via-gray-900 to-indigo-900">
       <div className="max-w-6xl mx-auto px-6">
         <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold text-slate-700 mb-4">Featured Projects</h2>
+          <h2 className="text-4xl font-bold text-white mb-4">Featured Projects</h2>
           <div className="w-20 h-1 bg-gradient-to-r from-primary to-accent mx-auto mb-4"></div>
-          <p className="text-lg text-slate-600">Showcasing my experience in AI/ML and web development</p>
+          <p className="text-lg text-gray-300">Showcasing my experience in AI/ML and web development</p>
         </div>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">

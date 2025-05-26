@@ -3,7 +3,7 @@ import { GraduationCap, Code, Lightbulb } from "lucide-react";
 
 export default function About() {
   return (
-    <section id="about" className="py-24 bg-gradient-to-br from-gray-50 via-slate-50 to-blue-50 relative overflow-hidden">
+    <section id="about" className="py-24 bg-gradient-to-br from-slate-800 via-gray-800 to-indigo-800 relative overflow-hidden">
       {/* Background Elements */}
       <div className="absolute top-0 right-0 w-96 h-96 bg-gradient-to-br from-indigo-100 to-violet-100 rounded-full opacity-20 blur-3xl"></div>
       <div className="absolute bottom-0 left-0 w-96 h-96 bg-gradient-to-tr from-violet-100 to-indigo-100 rounded-full opacity-20 blur-3xl"></div>
@@ -16,11 +16,11 @@ export default function About() {
             transition={{ duration: 0.6 }}
             viewport={{ once: true }}
           >
-            <h2 className="text-5xl md:text-6xl font-black text-slate-900 mb-6">
+            <h2 className="text-5xl md:text-6xl font-black text-white mb-6">
               About <span className="gradient-text">Me</span>
             </h2>
             <div className="section-divider w-32 mx-auto mb-6"></div>
-            <p className="text-xl text-slate-600 max-w-3xl mx-auto">
+            <p className="text-xl text-gray-300 max-w-3xl mx-auto">
               Transforming ideas into intelligent solutions through innovative AI/ML technologies
             </p>
           </motion.div>
@@ -54,10 +54,10 @@ export default function About() {
             className="space-y-8"
           >
             <div>
-              <h3 className="text-4xl font-bold text-slate-900 mb-6">
+              <h3 className="text-4xl font-bold text-white mb-6">
                 Passionate About <span className="gradient-text">AI & Machine Learning</span>
               </h3>
-              <p className="text-lg text-slate-600 leading-relaxed mb-8">
+              <p className="text-lg text-gray-300 leading-relaxed mb-8">
                 Motivated and detail-oriented computer science student with a strong foundation in programming and software development. 
                 Passionate about leveraging cutting-edge AI/ML technologies to create innovative solutions that solve real-world problems 
                 and drive technological advancement.

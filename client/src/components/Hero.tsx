@@ -33,7 +33,7 @@ export default function Hero() {
   return (
     <section id="home" className="min-h-screen flex items-center justify-center relative overflow-hidden">
       {/* Advanced Background */}
-      <div className="absolute inset-0 bg-gradient-to-br from-slate-100 via-gray-50 to-blue-100">
+      <div className="absolute inset-0 bg-gradient-to-br from-slate-800 via-gray-800 to-indigo-800">
         <div className="absolute inset-0 hero-glow"></div>
         <div className="absolute inset-0 opacity-5">
           <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-indigo-300 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-pulse"></div>
@@ -64,24 +64,24 @@ export default function Hero() {
           </div>
 
           <div className="space-y-6">
-            <h1 className="text-6xl md:text-8xl font-black text-slate-900 mb-6 text-shadow">
+            <h1 className="text-6xl md:text-8xl font-black text-white mb-6 text-shadow">
               <span className="gradient-text">Pulla Sai Kiran</span>
             </h1>
             
             <div className="space-y-3">
-              <p className="text-2xl md:text-3xl font-semibold text-slate-700">
+              <p className="text-2xl md:text-3xl font-semibold text-gray-200">
                 AI/ML Engineer & Software Developer
               </p>
-              <p className="text-lg md:text-xl text-slate-600 max-w-3xl mx-auto leading-relaxed">
+              <p className="text-lg md:text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
                 Passionate about creating intelligent solutions with cutting-edge machine learning technologies
               </p>
             </div>
 
-            <div className="flex items-center justify-center space-x-2 text-indigo-600 text-lg font-medium">
+            <div className="flex items-center justify-center space-x-2 text-indigo-400 text-lg font-medium">
               <MapPin className="w-5 h-5" />
-              <span>Hyderabad, India</span>
+              <span className="text-white">Hyderabad, India</span>
               <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse ml-2"></div>
-              <span className="text-sm text-slate-500">Available for opportunities</span>
+              <span className="text-sm text-gray-300">Available for opportunities</span>
             </div>
           </div>
         </motion.div>
@@ -95,15 +95,15 @@ export default function Hero() {
         >
           <div className="stats-card p-6 rounded-2xl text-center">
             <div className="text-3xl font-bold gradient-text mb-2">8.02</div>
-            <div className="text-sm text-slate-600 font-medium">CGPA</div>
+            <div className="text-sm text-gray-300 font-medium">CGPA</div>
           </div>
           <div className="stats-card p-6 rounded-2xl text-center">
             <div className="text-3xl font-bold gradient-text mb-2">3+</div>
-            <div className="text-sm text-slate-600 font-medium">Major Projects</div>
+            <div className="text-sm text-gray-300 font-medium">Major Projects</div>
           </div>
           <div className="stats-card p-6 rounded-2xl text-center">
             <div className="text-3xl font-bold gradient-text mb-2">6+</div>
-            <div className="text-sm text-slate-600 font-medium">Certifications</div>
+            <div className="text-sm text-gray-300 font-medium">Certifications</div>
           </div>
         </motion.div>
 
