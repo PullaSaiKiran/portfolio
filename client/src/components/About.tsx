@@ -73,7 +73,7 @@ export default function About() {
                   <div>
                     <h4 className="text-xl font-bold text-white mb-2">Academic Excellence</h4>
                     <p className="text-gray-200 font-semibold">B.Tech in AI & Machine Learning</p>
-                    <p className="text-gray-300">Anurag University, Hyderabad (2021-Present)</p>
+                    <p className="text-gray-300">Anurag University, Hyderabad (2021-2025)</p>
                     <div className="inline-flex items-center bg-green-600 text-white px-3 py-1 rounded-full text-sm font-semibold mt-2">
                       CGPA: 8.02/10.0
                     </div>
