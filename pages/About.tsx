@@ -23,7 +23,7 @@ const About: React.FC = () => {
           </h2>
           <p className="mt-4 text-lg text-slate-300 leading-relaxed">
             I am a {RESUME_DATA.title} based in {RESUME_DATA.contact.location}. 
-            Rcently I have Completed My Bachelor of Technology in Artificial Intelligence and Machine Learning at Anurag University.
+            I have Completed My Bachelor of Technology in Artificial Intelligence and Machine Learning at Anurag University.
           </p>
           <p className="mt-4 text-lg text-slate-300 leading-relaxed">
             My passion lies in bridging the gap between complex machine learning algorithms and user-friendly web applications. 
